@@ -10,15 +10,15 @@ export class JobDetail extends Component {
   }
 
   async componentDidMount() {
-    const {jobID} = this.props.match.paramas
-    const job = await loadJob(jobID)
-    this.setState({ job })
+    const {jobId} = this.props.match.params;
+    const job = await loadJob(jobId);
+    this.setState({ job });
   }
 
   render() {
     const {job} = this.state;
     if(!job) {
-      return null
+      return <><h1>Ooops..</h1></>
     }
     return (
       <div>

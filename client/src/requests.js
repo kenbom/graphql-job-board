@@ -12,13 +12,12 @@ export async function loadJob(id) {
                  company{
                    id
                    name
-                   description
                  }
                  description
                }
-               }`
-        }),
-        variables: { id }
+               }`,
+               variables: {id}
+        })
     })
     const responseBody = await response.json();
     return responseBody.data.job;
